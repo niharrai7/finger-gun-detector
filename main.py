@@ -11,6 +11,11 @@ from mediapipe.tasks.python import vision
 
 MODEL_PATH = "hand_landmarker.task"
 HIGHSCORE_FILE = "highscore.txt"
+if not os.path.exists(MODEL_PATH):
+    print("ERROR: hand_landmarker.task not found.")
+    print("Make sure the model file is in the project folder.")
+    input("Press Enter to exit...")
+    exit()
 
 base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
 options = vision.HandLandmarkerOptions(
@@ -21,6 +26,11 @@ options = vision.HandLandmarkerOptions(
 detector = vision.HandLandmarker.create_from_options(options)
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+if not cap.isOpened():
+    print("ERROR: Could not open webcam.")
+    print("Make sure your webcam is connected and available.")
+    input("Press Enter to exit...")
+    exit()
 
 def dist(a, b):
     return ((a.x - b.x) ** 2 + (a.y - b.y) ** 2) ** 0.5
