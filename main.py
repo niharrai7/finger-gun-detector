@@ -154,7 +154,7 @@ ammo = MAG_SIZE
 
 GAME_DURATION = config.GAME_DURATION
 last_reload_time = 0
-RELOAD_COOLDOWN = 1.0
+RELOAD_COOLDOWN = config.RELOAD_COOLDOWN
 game_start_time = 0
 high_score = load_high_score()
 
