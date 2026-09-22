@@ -5,6 +5,7 @@ import random
 import os
 import winsound
 import mediapipe as mp
+import config
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
@@ -138,12 +139,12 @@ TARGET_RADIUS_BASE = 30
 NUM_TARGETS = 3
 targets = []
 
-MAG_SIZE = 6
+MAG_SIZE = config.MAG_SIZE
 ammo = MAG_SIZE
+
+GAME_DURATION = config.GAME_DURATION
 last_reload_time = 0
 RELOAD_COOLDOWN = 1.0
-
-GAME_DURATION = 30
 game_start_time = 0
 high_score = load_high_score()
 
