@@ -25,7 +25,7 @@ options = vision.HandLandmarkerOptions(
 )
 detector = vision.HandLandmarker.create_from_options(options)
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(config.CAMERA_INDEX, cv2.CAP_DSHOW)
 if not cap.isOpened():
     print("ERROR: Could not open webcam.")
     print("Make sure your webcam is connected and available.")
